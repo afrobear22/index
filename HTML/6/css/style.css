@@ -1,0 +1,89 @@
+.bb1 {
+    background-color: pink;
+    display: block;
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+.bb2 {
+    background-color: darkolivegreen;
+    display: block;
+    height: 100%;
+    width: 50%;
+    float: right;
+}
+.up {
+    display: block;
+    height: 25%;
+    width: 100%;
+    float: left;
+}
+.up-left {
+    background-color: red;
+    display: block;
+    height: 100%;
+    width: 25%;
+    float: left;
+}
+.up-right {
+    background-color: red;
+    display: block;
+    height: 100%;
+    width: 25%;
+    float: right;
+}
+.mid {
+    display: block;
+    height: 25%;
+    width: 100%;
+    float: left;
+}
+.mid-left {
+    background-color: yellow;
+    display: block;
+    height: 100%;
+    width: 33.33%;
+    float: left;
+}
+.mid-mid {
+    background-color: lightseagreen;
+    display: block;
+    height: 100%;
+    width: 33.33%;
+    float: left;
+}
+.mid-right {
+    background-color: darkblue;
+    display: block;
+    height: 100%;
+    width: 33.33%;
+    float: left;
+}
+.up-left2{
+    background-color: blue;
+    display: block;
+    height: 100%;
+    width: 25%;
+    float: left;
+}
+.up-right2{
+    background-color: blue;
+    display: block;
+    height: 100%;
+    width: 25%;
+    float: right;
+}
+.mid-left2{
+    background-color: slateblue;
+    display: block;
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+.mid-right2{
+    background-color: lightsalmon;
+    display: block;
+    height: 100%;
+    width: 50%;
+    float: right;
+}
