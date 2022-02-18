@@ -23,7 +23,7 @@ const postAllResidents = async(req, res, next) => {
 };
 
 const putAllResidents = async(req, res, next) => {
-    const _id = req.params._id;
+    const _id = +req.params._id;
     const { name, hasCar, isBoomer } = req.body;
 
     if (!name || hasCar === undefined || isBoomer === undefined) {
@@ -39,7 +39,7 @@ const putAllResidents = async(req, res, next) => {
 };
 
 const deleteResident = async(req, res, next) => {
-    const _id = req.params._id;
+    const _id = +req.params._id;
 
     if (!_id) {
         return res.status(400).json('Missing id!');
