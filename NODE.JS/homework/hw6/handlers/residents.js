@@ -1,54 +1,58 @@
 const Resident = require('../core/Resident');
 
-const getAllResidents = async(req, res) => {
+const getAllResidents = async(req, res, next) => {
     try {
-        const allResidents = await Resident.getAllResidents();
-        return res.status(200).json(allResidents);
+        const AllResidents = await Resident.find();
+        return res.status(200).json(AllResidents);
     } catch (error) {
         return res.status(500).json(error);
     }
 };
 
-const postAllResidents = async(req, res) => {
+const postAllResidents = async(req, res, next) => {
+    const { name, hasCar, isBoomer } = req.body;
+    if (!name || hasCar === undefined || isBoomer === undefined) {
+        return res.status(400).json('Invalid input, object invalid.');
+    }
+    try {
+        await Resident.create({ name, hasCar, isBoomer });
+        return res.status(201).json('Resident created.');
+    } catch (error) {
+        return res.status(409).json('An existing item already exists.');
+    }
+};
+
+const putAllResidents = async(req, res, next) => {
+    const _id = req.params._id;
     const { name, hasCar, isBoomer } = req.body;
 
     if (!name || hasCar === undefined || isBoomer === undefined) {
-        return res.status(400).json('Missing data!')
+        return res.status(400).json('Bad request, missing info.');
     }
+
     try {
-        await Resident.addNewResident({ name, hasCar, isBoomer });
-        return res.status(201).json('Created!');
+        await Resident.findByIdAndUpdate(_id, { name, hasCar, isBoomer });
+        return res.status(200).json('Residents info edited.');
     } catch (error) {
         return res.status(500).json(error);
     }
 };
 
-const putAllResidents = async(req, res) => {
-    const { name, hasCar, isBoomer } = req.body;
+const deleteResident = async(req, res, next) => {
+    const _id = req.params._id;
 
-    const _id = +req.params.boomer;
-
-    if (!name || hasCar === undefined || isBoomer === undefined) {
-        return res.status(400).json('Missing data!')
+    if (!_id) {
+        return res.status(400).json('Missing id!');
     }
     try {
-        await Resident.updateResident({ _id, name, hasCar, isBoomer });
-        return res.status(200).json('Updated resident!')
+
+        await Resident.findByIdAndDelete(_id);
+        return res.status(200).json('OK');
     } catch (error) {
-        return res.status(500).json(error);
+        return res.status(500).json('Internal server error, Resident cannot be deleted.');
     }
 };
 
-const deleteResident = async(req, res) => {
-    const _id = +req.params.boomer;
-
-    try {
-        await Resident.deleteResident(_id);
-        return res.status(200).json('Deleted resident');
-    } catch (error) {
-        return res.status(500).json(error);
-    }
-};
 
 module.exports = {
     getAllResidents,
