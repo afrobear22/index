@@ -5,5 +5,5 @@ const Resident = mongoose.model('residents', {
     hasCar: Boolean,
     isBoomer: Boolean,
 });
-mongoose.Types.ObjectId
+// mongoose.Types.ObjectId()
 module.exports = Resident;
