@@ -6,4 +6,4 @@
 6. Create two handlers for the two models.
 7. The products handler should have the following capabilities: bulk insert, reading all entries, updating one entry and deleting an entry.
 8. The user handler should provide two functionalities: registering a new user, and login.
-9. Create a JWT middleware that prevents access to any product route if the user is not logged in.
+9. Create a JWT middleware that prevents access to any product route if the user is not logged in
