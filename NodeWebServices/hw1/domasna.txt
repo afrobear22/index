@@ -1,0 +1,4 @@
+https://nodejs.org/dist/latest-v17.x/docs/api/fs.html
+
+promise-ификација на 5 fs функции
+повикување на функциите со then и try/catch
