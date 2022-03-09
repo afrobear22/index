@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
-const host = 'cluster0.pdohn.mongodb.net';
-const username = 'blaze';
-const password = 'blaze123';
-const dbname = 'movies';
+const host = '';
+const username = '';
+const password = '';
+const dbname = '';
 
 let DSN = `mongodb+srv://${username}:${password}@${host}/${dbname}?retryWrites=true&w=majority`;
 
